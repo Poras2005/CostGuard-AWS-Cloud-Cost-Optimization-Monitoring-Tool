@@ -6,6 +6,7 @@ CostGuard is a serverless, open-source tool designed to help engineering and fin
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)
 ![AWS Lambda](https://img.shields.io/badge/AWS_Lambda-Serverless-FF9900?logo=awslambda&logoColor=white)
 ![CloudWatch](https://img.shields.io/badge/CloudWatch-Monitoring-FF4F8B?logo=amazoncloudwatch&logoColor=white)
+![Cost Explorer](https://img.shields.io/badge/Cost_Explorer-Billing_Analytics-blue)
 ![Terraform](https://img.shields.io/badge/Terraform-IaC-7B42BC?logo=terraform&logoColor=white)
 ![boto3](https://img.shields.io/badge/boto3-AWS_SDK-yellow)
 ---
