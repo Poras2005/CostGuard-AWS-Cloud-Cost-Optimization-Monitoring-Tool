@@ -1,16 +1,18 @@
-# 🛡️ CostGuard — AWS FinOps Automation & Monitoring
+# 🛡️ CostGuard — AWS Cloud Cost Optimization & Monitoring Tool
 
 CostGuard is a serverless, open-source tool designed to help engineering and finance teams gain visibility and control over their AWS spend. It automatically identifies resource waste, detects cost anomalies using statistical analysis, and generates a visual dashboard for daily spend tracking.
 
-[![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=flat&logo=amazon-aws&logoColor=white)](https://aws.amazon.com/)
-[![Terraform](https://img.shields.io/badge/terraform-%235835CC.svg?style=flat&logo=terraform&logoColor=white)](https://www.terraform.io/)
-[![Python](https://img.shields.io/badge/python-3.12-blue.svg?style=flat&logo=python&logoColor=white)](https://www.python.org/)
-
+![AWS](https://img.shields.io/badge/AWS-FinOps-FF9900?logo=amazonaws&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)
+![AWS Lambda](https://img.shields.io/badge/AWS_Lambda-Serverless-FF9900?logo=awslambda&logoColor=white)
+![CloudWatch](https://img.shields.io/badge/CloudWatch-Monitoring-FF4F8B?logo=amazoncloudwatch&logoColor=white)
+![Terraform](https://img.shields.io/badge/Terraform-IaC-7B42BC?logo=terraform&logoColor=white)
+![boto3](https://img.shields.io/badge/boto3-AWS_SDK-yellow)
 ---
 
 ## 🚀 Key Modules
 
-### 1. 🗑️ Waste Detector
+### 1. Waste Detector
 Scans your account daily for "orphaned" or underutilized resources that are driving up costs without providing value.
 - **Idle EC2 Instances:** Identifies instances with < 5% CPU utilization (configurable) over the last 7 days.
 - **Unattached EBS Volumes:** Finds block storage volumes not attached to any running instance.
@@ -18,13 +20,13 @@ Scans your account daily for "orphaned" or underutilized resources that are driv
 - **Old Snapshots:** Flags snapshots older than 30 days that may no longer be needed.
 - **Optional Auto-Stop:** Can be configured to automatically stop idle EC2 instances to save costs immediately.
 
-### 2. 📈 Anomaly Alerter
+### 2. Anomaly Alerter
 Uses the AWS Cost Explorer API to monitor daily spend patterns and identify unexpected spikes.
 - **Service-Level Analysis:** Compares "Yesterday's" spend against a 7-day rolling average for every service.
 - **Noise Filtering:** Ignore small fluctuations (e.g., < $1) while alerting on significant percentage spikes (e.g., > 20%).
 - **Likely Cause Identification:** Provides hints on which service or region triggered the spike.
 
-### 3. 📊 Dashboard Generator
+### 3. Dashboard Generator
 Builds and hosts a serverless, static HTML dashboard on Amazon S3.
 - **Visual Trends:** Includes Chart.js-powered line graphs for spend trends.
 - **Cost Breakdown:** Tables showing top-spending services and total waste identified.
@@ -32,7 +34,7 @@ Builds and hosts a serverless, static HTML dashboard on Amazon S3.
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 CostGuard is 100% serverless, minimizing both its operational overhead and its own running cost.
 
@@ -52,7 +54,7 @@ graph LR
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 - **Compute:** AWS Lambda (Python 3.12)
 - **Orchestration:** Amazon EventBridge
 - **Infrastructure as Code:** Terraform
@@ -96,5 +98,3 @@ python -m pytest tests/
 - **Credential Safety:** Secrets like Slack webhooks are injected via environment variables at runtime and are never hardcoded.
 - **Dry Run Mode:** All destructive actions (like stopping instances) are disabled by default (`dry_run: true`).
 
-## ⚖️ License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
