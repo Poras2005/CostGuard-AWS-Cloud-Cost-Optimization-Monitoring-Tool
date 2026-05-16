@@ -1,0 +1,32 @@
+# config.yaml — non-sensitive settings only
+# AWS credentials always injected at runtime via env vars or getpass
+
+aws:
+  primary_region: ap-south-1
+  account_id: '' # set via AWS_ACCOUNT_ID env var
+
+waste_detector:
+  ec2_cpu_threshold_percent: 5 # below this = idle
+  ec2_lookback_days: 7 # how far back to check CPU
+  snapshot_age_days: 30 # older than this = waste
+  dry_run: true # true = report only, no actions
+  auto_stop_idle_ec2: false # set true to enable auto-stop
+
+anomaly_alerter:
+  lookback_days: 8 # 7 days avg + 1 day comparison
+  spike_threshold_percent: 20 # alert if service spikes > this
+  min_spend_to_alert: 1.0 # ignore spikes < $1 (noise filter)
+
+dashboard:
+  s3_bucket: costguard-dashboard-<YOUR_ACCOUNT_ID>
+  s3_key: index.html
+  cost_lookback_days: 30
+
+alerts:
+  slack_webhook: '' # set via SLACK_WEBHOOK env var
+  sns_topic_arn: '' # set via SNS_TOPIC_ARN env var — created by Terraform
+
+schedule:
+  waste_detector: 'cron(0 8 * * ? *)' # 8am UTC daily
+  anomaly_alerter: 'cron(0 9 * * ? *)' # 9am UTC daily
+  dashboard_gen: 'cron(0 10 * * ? *)' # 10am UTC daily
