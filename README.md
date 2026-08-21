@@ -1,4 +1,4 @@
-# CostGuard — AWS Cloud Cost Monitoring & Resource Analysis Platform
+# CloudSpend Analyzer — AWS Cloud Cost Monitoring & Resource Analysis Platform
 
 ![AWS](https://img.shields.io/badge/AWS-Cloud_Operations-FF9900?logo=amazonaws&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-Automation-3776AB?logo=python&logoColor=white)
@@ -6,7 +6,7 @@
 ![CloudWatch](https://img.shields.io/badge/CloudWatch-Monitoring-FF4F8B?logo=amazoncloudwatch&logoColor=white)
 ![Terraform](https://img.shields.io/badge/Terraform-IaC-7B42BC?logo=terraform&logoColor=white)
 
-CostGuard is a cloud cost monitoring and resource analysis platform built on AWS to identify underutilized resources, monitor abnormal cloud spending patterns, and automate cost visibility workflows using serverless AWS services.
+CloudSpend Aanlyzer is a cloud cost monitoring and resource analysis platform built on AWS to identify underutilized resources, monitor abnormal cloud spending patterns, and automate cost visibility workflows using serverless AWS services.
 
 This project focuses on practical cloud operations concepts including:
 - AWS cost monitoring
@@ -20,7 +20,7 @@ This project focuses on practical cloud operations concepts including:
 
 # Project Overview
 
-CostGuard periodically analyzes AWS infrastructure usage and cloud billing data to identify potential operational waste and abnormal spending behavior.
+CloudSpend Analyzer periodically analyzes AWS infrastructure usage and cloud billing data to identify potential operational waste and abnormal spending behavior.
 
 The platform uses AWS APIs and scheduled automation workflows to:
 - detect idle cloud resources
